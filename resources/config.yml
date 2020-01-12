@@ -1,0 +1,43 @@
+---
+# ITA:
+# Il prefix del messaggio
+#
+# ENG:
+# message prefix
+Prefix: "§eDeath§6Money§f:"
+
+# ITA:
+# Questi sono i messaggi che appariranno alla morte del player:
+# killed-message:
+# %PREFIX% è il prefix precedentemente impostato,
+# %PERCENTAGE% è la percentuale di soldi sottratti,
+# %SUBTRACTED% è la quantità di soldi sottratti,
+# %KILLERNAME% è il nome del player che uccide,
+# %KILLdRNAME% è il nome del player morto.
+#
+# ENG:
+# These are the messages that will appear when a player dies:
+# killed-message:
+# %PREFIX% prefix previously set,
+# %PERCENTAGE% percentage of money taken,
+# %SUBTRACTED% quantity of money taken,
+# %KILLERNAME% killer's name,
+# %KILLdRNAME% dead player's name.
+killed-message: "%PREFIX% §e%PERCENTAGE% §4 of your money has been taken §0(§e%SUBTRACTED%§0)§4 for being killed by: %KILLERNAME%"
+killer-message: "%PREFIX% §e%SUBTRACTED% §ahave been added to your money for killing: §e%KILLEDNAME%"
+death-message: "%PREFIX% §e%PERCENTAGE% §4 of your money has been taken §0(§e%SUBTRACTED%§0)§4 for being deathed"
+
+# ITA:
+# Questa parametro, permette di decidere in un mondo specifico la percentuale di soldi tolti per ogni morte, se nel mondo test123 vogliamo
+# togliere il 64% dei soldi basterà scrivere:
+#  test123: 64
+#
+# ENG:
+# This parameter lets you decide in a specific world the percentage of money taken at each death, if in world test123 we want
+# take the 64% of the money we have to write
+# test123: 64
+
+activeon:
+  test123: 2
+  fazioni: 100
+...
