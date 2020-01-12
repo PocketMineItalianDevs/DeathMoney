@@ -21,13 +21,15 @@ class Main extends PluginBase implements Listener{
 
 	public function onEnable(){
 		$this->getServer()->getPluginManager()->registerEvents($this, $this);
-		if(!$this->economy = $this->getServer()->getPluginManager()->getPlugin('EconomyAPI')){
-			$this->getServer()->getLogger()->alert(TextFormat::RED . " EconomyAPI not found");
-		}
+		$this->economy = $this->getServer()->getPluginManager()->getPlugin('EconomyAPI');
 		if($this->getConfig()->get('activeon') !== null){
 			foreach($this->getConfig()->get('activeon') as $world => $number){
 				$this->active[$world] = $number;
 			}
+		}
+		else{
+			$this->getLogger()->error('Config: activeon is empty');
+			$this->getServer()->getPluginManager()->disablePlugin($this);
 		}
 	}
 
