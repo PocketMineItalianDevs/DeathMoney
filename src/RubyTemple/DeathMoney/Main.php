@@ -54,19 +54,19 @@ class Main extends PluginBase implements Listener{
 	 */
 	public function correctMessage(string $message, float $percent, float $money, string $damager, string $player): string {
 		return str_replace(
-			array(
+			[
 				"%PREFIX%",
 				"%PERCENTAGE%",
 				"%SUBTRACTED%",
 				"%KILLERNAME%",
 				"%KILLEDNAME%"
-			), array(
+			], [
 				$this->getConfig()->get('Prefix'),
 				$percent . "%",
 				$money . "$",
 				$damager,
 				$player
-			),
+			],
 			$message);
 	}
 
